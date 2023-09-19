@@ -3,29 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health and Wellness Resource Center</title>
+    <title>Body Fat Percentage Calculator</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            background-repeat: no-repeat;
+            background-image: url(https://e0.pxfuel.com/wallpapers/17/169/desktop-wallpaper-ydo465-fitness-fitness-in-high-quality-w-web-fitness-phone.jpg);
+            object-fit: cover;
+            background-size: cover;
+          
+        }
+        .thiscontainerforcontainer{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-gap: 2px; /* Gap between blocks */
+
+        }
+        .container {
+            width: 480px;  
+            height: 30px;
+            text-align: center;
+            display: grid;
+           
+            
+        }
+        .container_for-typing{
+            width: 680px; 
+            height: 100%; 
+            text-align: center;
+            display: grid;
+        }
+         .glass{
+            width: 100%;
+           
+            background: linear-gradient(rgba(252, 252, 252, 0.1),rgba(238, 232, 232, 0.433));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1xp solid;
+        
+        }
+        .glass_for-typing{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.1),rgba(238, 232, 232, 0.433));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1xp solid;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1xp solid;
             display: flex;
             justify-content: space-around;
             text-align: center;
-        }
-        .logo{
-            counter-reset: rgb(44,44,44);
-            font-size: 1.5em;
-
-        }
-        .nav{
+        } .nav{
             display: flex;
             align-items: center;
         }
@@ -56,7 +91,7 @@
             text-decoration: none;
             padding: 0.2em 1.2em 0.9em 1.2em;
             border-radius: 10px 10px 0 0;
-            color: rgb(0, 76, 255);
+            color: rgb(255, 255, 255);
             transition: all .4s;
             position: relative;
             z-index: 1;
@@ -81,138 +116,291 @@
         .nav ol a:hover{color: white;}
         
        
-        .container {
-            max-width: 960px;
-            
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            margin: 5px 0;
+           
+            border-radius: 4px;
+            background: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1xp solid;
         }
-        .language-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            grid-gap: 8px; /* Gap between blocks */
+        .select{
+            width: 60%;
+            height: 30px;
+           margin: 4px;
+           
+           border-radius: 4px;
+            background: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1xp solid;
         }
-    
-        .language-block {
-            width: 350px;
-            height: 250px;
-            border-radius: 30%;
-            background-color: transparent;
+        button {
+            padding: 10px 20px;
+            margin: 50px;
+            background-color: #3498db;
             color: #fff;
-            text-align: center;
-            display: block;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
+            width: 100px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            position: relative;
         }
+        label{
+            width: 150px;
+            display: inline-block;
 
-        /* Hover effect */
-        .language-block:hover {
-            background-color: #d2af72b1;
         }
-
-        /* Style for text on the image */
-        .language-text {
+        #result{
             font-weight: bold;
-            position: absolute;
-            font-family: " oblique", Times, serif;
-           color: #090240e1;
-            font-size: 60px;
-            bottom: 50px;
-            right: 70px;
-            left: 30px;
+            text-align: left;
+            margin-left: 30px;
+            color: #fff;
+            margin-right: 30px;
+           
+        }
+        h1{
+            color: #fff;
+        }h2{
+            color: white;
+        }
+        h4{
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin-left: 10px;
+        }
+        label{
+            color: white;
+        }
+        #typing-container{
+           font-size: 25px;
+        }
+        @media (max-width: 768px) {
 
+            body{
+                background-image:url("https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");           
+                 background-repeat: repeat;
+                background-size:  768px;
+            }
+        .thiscontainerforcontainer {
+            display: block; /* Change to block for mobile */
+            width: 100%; /* Full width for mobile */
         }
 
-        /* Style for images */
-        .language-img {
-         width: 350px;
-         height: 250px;
-            object-fit: cover;
-            border-radius: 30%;
-            filter: blur(1.50px);
+        .container,
+        .container_for-typing {
+            width: 100%; /* Full width for mobile */
         }
-   
+
+        .glass,
+        .glass_for-typing {
+            border-radius: 10px; /* Reduce border-radius for mobile */
+            display: grid;
+            margin: 0 auto;
+            width: 350px;
+            
+            
+        }
+        .glass {
+        margin: -20px auto 20px auto; /* Move up 20px and center horizontally */
+    }
+
+    .glass_for-typing {
+        margin: 500px auto -20px auto; /* Move down 20px and center horizontally */
+        height: auto;
+        
+    }
+       
+        header {
+          
+            justify-content: space-between; /* Adjust spacing for mobile */
+        }
+        h1{
+            font-size: 18px;
+        }
+
+        .nav ol li a {
+            padding: 0.2em 0.6em 0.9em 0.6em; /* Adjust padding for mobile */
+      
+      
+        }
+        .nav ol {
+        flex-direction: column; /* Stack menu items vertically for mobile */
+    }
+
+    .nav ol li {
+        margin: 0; /* Remove margin for mobile */
+    }
+
+    .nav ol li a {
+        display: block; /* Make menu items full-width for mobile */
+        text-align: left; /* Adjust text alignment for mobile */
+        padding: 10px 20px; /* Increase padding for better touch targets */
+        border-radius: 0; /* Remove border-radius for mobile */
+        color: rgb(255, 255, 255);
+        transition: all 0.4s;
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add a separator between items */
+    }
+
+    .nav ol li:last-child a {
+        border-bottom: none; /* Remove separator for the last item */
+    }
+
+    .nav ol li a::before {
+        content: none; /* Remove the before pseudo-element for mobile */
+    }
+
+    .nav ol li a:hover {
+        background: linear-gradient(to right, #2490be, #32aed7, #0F2027);
+        color: white;
+    }
+    .nav ol {
+        display: none;
+        flex-direction: column; /* Stack menu items vertically for mobile */
+    }
+
+    .nav.open ol {
+        display: flex; /* Display the menu when the "open" class is added */
+    }
+
+    .menu-button {
+        display: block; /* Display the menu button for mobile */
+        cursor: pointer;
+    }
+
+    /* Style for the hamburger menu button */
+    .menu-button::before {
+        content: '\2630'; /* Unicode character for the hamburger icon */
+        font-size: 24px; /* Adjust the size as needed */
+        color: white;
+    }
+
+    .menu-button.active::before {
+        content: '\2715'; /* Unicode character for the close icon when menu is open */
+    }
+
+    .menu-button.active + .nav.open ol {
+        display: flex; /* Display the menu when the button is active */
+    }
+
+
+        input[type="number"],
+        .select {
+            width: 60%; /* Full width for mobile */
+        
+        }
+        .container,
+    .container_for-typing {
+        text-align: center;
+    }
+
+    input[type="number"],
+    .select {
+        margin: 5px auto; /* Center-align inputs and selects horizontally */
+        width: 60%;
+        padding: 10px;
+    }
+
+
+        button {
+            margin: 5px 150px; /* Adjust margin for mobile */
+        align-items: center;
+        }
+
+        label {
+            width: auto; /* Let labels adapt to content width */
+        }
+
+        #typing-container {
+            font-size: 20px; /* Reduce font size for mobile */
+        }
+    }
+
+        
+       
     </style>
+    
 </head>
 <body>
     <header>
         <h1>Welcome to the Health and Wellness Resource Center</h1>
-        
+        <div class="menu-button"></div>
         <input type="checkbox" name="" class=" btn">
         <div class="nav"> 
             <ol>
                <li><a href="#">diet</a></li>
-               <li><a href="water.html">Home</a></li>
+               <li><a href="water/water.html">Home</a></li>
                <li><a href="# ">Nutrition</a></li>
-               <li><a href="fitness.html">workout</a></li>
+               <li><a href="fitness/fitness.html">workout</a></li>
                <li><a href="#  ">Mental Health</a></li>
                <li><a href="#  ">Lifestyle</a></li>
             </ol>
         </div>
  
     </header>
- 
-    <div class="container">
-        <!-- Add your content here -->
-        <h2>Latest Articles</h2>
+    <div class="thiscontainerforcontainer">
+    <div class="container ">
+        <div class="glass">
         
-        <!-- Add more articles and content sections -->
-
-        <div class="language-container">
-            <div class="language-block">
-                <img src="https://i.ibb.co/DrdG0qX/nutrition-34.jpg" alt="English" class="language-img">
-                <span class="language-text">create dite for you</span>
-            </div>
-            <div class="language-block">
-                <img src="https://cdn.shopify.com/s/files/1/0866/7664/articles/image1_ac5eb649-acc1-4ba1-b09c-61f11278a1ce_2048x.jpg?v=1604643565" alt="Spanish" class="language-img">
-                <span class="language-text">calculate Body Fat percentage</span>
-            </div>
-            <div class="language-block">
-                <img src="https://tse3.mm.bing.net/th?id=OIP.gyOWfruqeNI7nlbcI2BdsgHaEK&pid=Api&P=0&h=180" alt="Spanish" class="language-img">
-                <span class="language-text">workout plan for you</span>
-            </div>
-            <div class="language-block">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.cfRsvcEOhqwcc1fftX1xngHaFj&pid=Api&P=0&h=180" alt="Spanish" class="language-img">
-                <span class="language-text">mental health</span>
-            </div>
-            <div class="language-block">
-                <img src="spanish.jpg" alt="Spanish" class="language-img">
-                <span class="language-text">Spanish</span>
-            </div>
-            <div class="language-block">
-                <img src="spanish.jpg" alt="Spanish" class="language-img">
-                <span class="language-text">Spanish</span>
-            </div>
-            <div class="language-block">
-                <img src="spanish.jpg" alt="Spanish" class="language-img">
-                <span class="language-text">Spanish</span>
-            </div> <div class="language-block">
-                <img src="spanish.jpg" alt="Spanish" class="language-img">
-                <span class="language-text">Spanish</span>
-            </div>
-
-        </div>
-      <div class="article">
-            <h3>10 Tips for a Healthy Lifestyle</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="article">
-            <h3>The Benefits of Regular Exercise</h3>
-            <p>Exercise is essential for a healthy body and mind. ...</p>
-            <a href="#">Read More</a>
-        </div>
+        <h2>create you Diet</h2>
+        <label for="gender">Select Gender:</label>
+        <select id="gender" class="select">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <label for="gender">Select country</label>
+        <select id="gender" class="select">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <label for="diet-type">Diet Type:</label>
+        <select id="diet-type" class="select">
+            <option value="balanced">Balanced Diet</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="keto">Keto</option>
+        </select>
+        <br>
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" min="1">
+        <br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" min="1">
+        <br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" min="1">
+        <br>
+       
+        <label for="Lifestyle">Lifestyle :</label>
+        <input type="number" id="Lifestyle" min="1">
+        <br>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" min="1">
+        <br>
+        <button onclick="calculateBodyFat()" id="startButton">create</button>
+        
     </div>
-    <footer>
-        <!-- Add footer content here -->
-        <p>&copy; 2023 Health and Wellness Resource Center</p>
-    </footer>
-    <!-- Add your JavaScript code here, if needed -->
+    </div>
+    <div class="container_for-typing" id="">
+        <div class="glass_for-typing" id="">
+            <h4 id="typing-container">here is your diet plan</h4>
+            <br>  
+        
+            <p id="result" ></p>
+    </div>
+    </div>
+    
+</div>
+<script src="script.js"></script>
+   
 </body>
 </html>
